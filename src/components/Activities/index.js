@@ -46,14 +46,14 @@ export default function Activities() {
         <TouchableOpacity onPress={() => handleActivity('All')}>
           <ActivityContainer>
             <AllActivities isActive={selectedActivity === 'All'}>Todas</AllActivities>
-            {selectedActivity === 'All' && (<ActivityBorderBottom />)}
+            {selectedActivity === 'All' ? (<ActivityBorderBottom />) : null}
           </ActivityContainer>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => handleActivity('Mine')}>
           <ActivityContainer>
             <Mine isActive={selectedActivity === 'Mine'}>Minhas</Mine> 
-            {selectedActivity === 'Mine' && (<ActivityBorderBottom />)}        
+            {selectedActivity === 'Mine' ? (<ActivityBorderBottom />) : null}        
           </ActivityContainer>
         </TouchableOpacity>
         </OwnerActivity>
