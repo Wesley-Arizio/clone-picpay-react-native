@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { ContainerTips, Option, Title, Img } from './styles';
 
 import img8 from '../../../assets/images/08.png';
