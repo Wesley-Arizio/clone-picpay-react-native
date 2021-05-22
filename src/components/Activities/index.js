@@ -1,5 +1,6 @@
 import React from "react";
 import { Feather, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import { TouchableOpacity } from 'react-native';
 
 import {
   Container,
@@ -23,19 +24,38 @@ import {
   Actions,
   Option,
   OptionLabel,
+  ActivityBorderBottom,
+  ActivityContainer
 } from "./styles";
 
 import avatar from "../../../assets/images/avatar.png";
 
 export default function Activities() {
+  const [selectedActivity, setSelectedActivity] = React.useState('All'); // Mine or All
+
+  const handleActivity = (selected) => {
+    setSelectedActivity(selected);
+  }
+
   return (
     <Container>
       <Header>
         <Title>Atividades</Title>
 
         <OwnerActivity>
-          <AllActivities>Todas</AllActivities>
-          <Mine>Minhas</Mine>
+        <TouchableOpacity onPress={() => handleActivity('All')}>
+          <ActivityContainer>
+            <AllActivities isActive={selectedActivity === 'All'}>Todas</AllActivities>
+            {selectedActivity === 'All' && (<ActivityBorderBottom />)}
+          </ActivityContainer>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => handleActivity('Mine')}>
+          <ActivityContainer>
+            <Mine isActive={selectedActivity === 'Mine'}>Minhas</Mine> 
+            {selectedActivity === 'Mine' && (<ActivityBorderBottom />)}        
+          </ActivityContainer>
+        </TouchableOpacity>
         </OwnerActivity>
       </Header>
       <Card>

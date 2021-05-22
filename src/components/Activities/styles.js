@@ -23,16 +23,29 @@ export const OwnerActivity = styled.View`
   align-items: center;
 `;
 
+export const ActivityContainer = styled.View`
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ActivityBorderBottom = styled.View`
+  width: 50%;
+  height: 2px;
+  margin-top: 5px;
+  background: #10c86e;
+`;
+
 export const AllActivities = styled.Text`
-  color: #10c86e;
+  color: ${(props) => props.isActive ? '#10c86e': 'rgba(255, 255, 255, 0.8)'};
   font-size: 13px;
   font-weight: bold;
-
-  margin-right: 15px;
 `;
 
 export const Mine = styled.Text`
-  color: #10c86e;
+  color: ${(props) => props.isActive ? '#10c86e' : 'rgba(255, 255, 255, 0.8)'};
   font-size: 13px;
   font-weight: bold;
 `;

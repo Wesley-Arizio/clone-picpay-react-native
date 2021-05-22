@@ -6,6 +6,7 @@ export const Container = styled.ScrollView.attrs(() => ({
     alignItems: "center",
     paddingLeft: 16,
   },
+  showsHorizontalScrollIndicator: false,
 }))`
   background: #1e222b;
   height: 130px;
